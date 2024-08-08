@@ -5,14 +5,14 @@ import { MetadataRoute } from "next";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const postEntries: MetadataRoute.Sitemap = allDocs.map((doc) => ({
-    url: `http://elevenai.co/${doc.slugAsParams}`,
+    url: `https://elevenai.co/${doc.slugAsParams}`,
     lastModified: new Date(doc.date),
     changeFrequency: 'daily',
   }));
 
   return [
     {
-      url: `http://elevenai.co/about`,
+      url: `https://elevenai.co/about`,
       lastModified: new Date(),
     },
     ...postEntries,

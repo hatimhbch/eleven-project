@@ -99,8 +99,8 @@
     width: 170px;
     height: 100px;
     margin-top: 25px;
-    background-position: center;
-    background-size: cover;
+    background-position: center !important;
+    background-size: cover !important;
     border: 1px solid #eee;
 }
 .hp-collection .hp-listofcollection:nth-child(2) .hp-cover{
