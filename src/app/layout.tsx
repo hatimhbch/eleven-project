@@ -24,9 +24,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const jsonLdLayout = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "elevenai",
+    "datePublished": "26-07-2024",
+    "author": {
+      "@type": "Person",
+      "name": "Hatim",
+    },
+    "publisher": {
+      "@type": "Organisation",
+      "name": "elevenai",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "../../logo.png"
+      }
+    },
+    "description": "Articles about anything you think about",
+    "image": "./opengraph-image.png",
+  };
+
   return (
     <html lang="en">
       <body className={inter.className}>
+      <script type="application/ld+json">
+        {JSON.stringify(jsonLdLayout)}
+      </script>
         <Navbar />
         {children}
         <Footer />

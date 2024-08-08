@@ -20,10 +20,11 @@ pre {
   background: #fdfcfb !important;
   padding: 17px 20px !important;
   border-radius: 5px !important;
+  margin: 40px 0 40px 0 !important;
   border: 1px solid #fffaf4 !important;
 }
 code {
   background: #fdfcfb !important;
   border: none !important;
-  font-size: 16px !important;
+  font-size: 17px !important;
 }

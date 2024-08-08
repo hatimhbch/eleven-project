@@ -63,8 +63,21 @@ const Page = async ({ params }: PageProps) => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": doc.title,
+    "datePublished": doc.date,
+    "author": {
+      "@type": "Person",
+      "name": "Hatim",
+    },
+    "publisher": {
+      "@type": "Organisation",
+      "name": "elevenai",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "../../logo.png"
+      }
+    },
     "description": doc.description,
-    "image": doc.imageurl
+    "image": doc.imageurl,
   };
 
   return (

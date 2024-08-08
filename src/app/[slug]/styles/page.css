@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,700..800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Figtree:ital,wght@0,300..900;1,300..900&family=M+PLUS+1p&family=Maname&family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Serif+Khitan+Small+Script&family=Noto+Serif+Tibetan:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto+Slab:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Zain:wght@200;300;400;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=M+PLUS+1p&family=Noto+Serif+Khitan+Small+Script&family=Noto+Serif+Tibetan:wght@100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Noto+Serif+Khitan+Small+Script&family=Noto+Serif+Tibetan:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap');
@@ -32,9 +32,10 @@
     padding: 55px 0 12px 0;
 }
 .articlepage a{
-    font-family: "Work Sans", sans-serif;
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
     font-weight: 500;
-    color: #1472ff;
+    color: #5121ff;
 }
 .articlepage h2{
     font-size: 32px;
@@ -45,10 +46,11 @@
     border: none;
 }
 .articlepage p,li{
-    font-family: "Maname", serif;
-    font-size: 20px;
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 19px;
     line-height: 32px;
-    color: #333;
+    color: #222;
     letter-spacing: 0.3px;
     font-weight: 300;
 }
