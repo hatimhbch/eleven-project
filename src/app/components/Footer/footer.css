@@ -1,0 +1,20 @@
+.lastpartofhp{
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+    padding: 8px 0;
+    background: #f5f4f1;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #eee;
+}
+.lastpartofhp li{
+    padding: 11px;
+    list-style: none;
+}
+.lastpartofhp li a,li p{
+    text-decoration: none;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    color: #666;
+}

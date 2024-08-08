@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,500;1,200&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,700..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=M+PLUS+1p&family=Noto+Serif+Khitan+Small+Script&family=Noto+Serif+Tibetan:wght@100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Noto+Serif+Khitan+Small+Script&family=Noto+Serif+Tibetan:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=M+PLUS+1p&family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Serif+Khitan+Small+Script&family=Noto+Serif+Tibetan:wght@100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=M+PLUS+1p&family=Maname&family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Serif+Khitan+Small+Script&family=Noto+Serif+Tibetan:wght@100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto+Slab:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Zain:wght@200;300;400;700;800;900&display=swap');
+
+.articlepage{
+    display: block;
+    width: 55%;
+    margin: 30px auto 0 auto;
+}
+.articlepage h1{
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    line-height: 55px;
+    font-family: "Work Sans", sans-serif;
+    color: #252629;
+    padding: 55px 0 12px 0;
+}
+.articlepage a{
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    color: #1472ff;
+}
+.articlepage h2{
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    color: #111111;
+    padding: 35px 0 10px 0;
+    border: none;
+}
+.articlepage p,li{
+    font-family: "Maname", serif;
+    font-size: 20px;
+    line-height: 32px;
+    color: #333;
+    letter-spacing: 0.3px;
+    font-weight: 300;
+}
+ul,li{
+    list-style: none;
+}
+strong{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: #222;
+    font-size: 19px;
+    border-bottom: 1px dashed #999;
+}
+.listoficonsreact{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 75px;
+    margin-top: 30px;
+    background: #fff;
+    justify-content: space-between;
+    border-bottom: 1px solid #f0f0f0;
+}
+.artinfo-user-art{
+    display: flex;
+}
+.artinfo-user-art img{
+    width: 43px;
+    height: 43px;
+    border: 1px dashed rgba(55, 44, 34, 0.4);
+    border-radius: 50px;
+}
+.aua-date-time{
+    display: block;
+    margin-left: 11px;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+.aua-date-time p{
+    font-family: 'Inter', sans-serif;
+    display: block;
+    color: #222;
+    font-size: 14px;
+    line-height: 25px;
+}
+.aua-date-time h6{
+    font-family: "Mukta", sans-serif;
+    font-size: 12px;
+    color: #777;
+    letter-spacing: 0.5px;
+    line-height: 12px;
+    font-weight: 400;
+}
+.discopysave{
+    display: flex;
+    width: 100px;
+    margin-top: 8px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.copieddis{
+    align-items: center;
+    display: flex;
+    height: 50px;
+    align-items: center;
+}
+.copieddis button{
+    width: 26px;
+}
+.copieddis button svg{
+    width: 26px;
+}
+.savedis{
+    align-items: center;
+    width: 20px;
+}
+.check{
+    width: 27px;
+    margin-right: 5px;
+}
