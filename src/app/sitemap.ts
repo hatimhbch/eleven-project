@@ -12,7 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     {
-      url: `https://elevenai.co/about`,
+      url: `https://elevenai.co`,
       lastModified: new Date(),
     },
     ...postEntries,
