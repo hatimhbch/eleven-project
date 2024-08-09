@@ -2,7 +2,8 @@ import { allDocs } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import PageClient from "./PageClient"; // Import the client component
 import { Metadata } from "next";
-import Head from "next/head"; // Import Head for adding the script to the head
+import Script from "next/script";
+import Head from "next/head";
 
 interface Doc {
   body: { code: string };
@@ -60,36 +61,35 @@ const Page = async ({ params }: PageProps) => {
     return <p>Not Found</p>;
   }
 
-  // Define JSON-LD data
-  const jsonLdData = {
+  const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": doc.title,
     "datePublished": doc.date,
     "author": {
       "@type": "Person",
-      "name": "Hatim" // Replace with dynamic data if available
+      "name": "Hatim",
     },
     "publisher": {
-      "@type": "Organization",
+      "@type": "Organisation",
       "name": "elevenai",
       "logo": {
         "@type": "ImageObject",
-        "url": "/logo.png" // Adjust the path as needed
+        "url": "../../logo.png"
       }
     },
     "description": doc.description,
-    "image": doc.imageurl
+    "image": doc.imageurl,
   };
 
   return (
     <>
       <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
-        />
-      </Head>
+    <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+</Head>
       <PageClient doc={doc} />
     </>
   );

@@ -49,9 +49,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <Head>
       <script type="application/ld+json">
         {JSON.stringify(jsonLdLayout)}
       </script>
+      </Head>
         <Navbar />
         {children}
         <Footer />
