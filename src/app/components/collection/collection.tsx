@@ -86,10 +86,12 @@ function Collection() {
   };
 
   return (
-    <div className='collection'>
-      <div className="hp-collection">{renderPosts()}</div>
-      {renderPagination()}
-    </div>
+    <>
+      <div className='collection'>
+        <div className="hp-collection">{renderPosts()}</div>
+        {renderPagination()}
+      </div>
+    </>
   );
 }
 

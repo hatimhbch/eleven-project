@@ -21,7 +21,7 @@ const SavedPage: FC = () => {
   return (
     <div>
       <h1>Saved Posts</h1>
-      <div className='hp-collection'>
+      <div className='shp-collection'>
         {savedPosts.map((post: { slugAsParams: any; title: string; description?: string; date: string }, index: Key) => (
           <Link href={`/${post.slugAsParams}`} key={index} className='hp-listofcollection'>
             <div className="hp-leftofarticle">

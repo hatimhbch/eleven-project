@@ -39,7 +39,7 @@ export default function RootLayout({
       "name": "elevenai",
       "logo": {
         "@type": "ImageObject",
-        "url": "../../logo.png"
+        "url": "./logo.png"
       }
     },
     "description": "Articles about anything you think about",
