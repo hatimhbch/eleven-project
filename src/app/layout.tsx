@@ -11,11 +11,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "elevenai",
     description: "Articles about anything you think about",
-    images: "/favicon.ico"
+    images: "/favicon.ico",
   },
   icons: {
-    icon: '/favicon.png',
-  },};
+    icon: "/favicon.png", // Specify the favicon file
+    shortcut: "/favicon.ico", // Optional, for browsers that use the shortcut icon
+  },
+};
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,8 +41,8 @@ export default function RootLayout({
       "name": "elevenai",
       "logo": {
         "@type": "ImageObject",
-        "url": "./logo.png"
-      }
+        "url": "./logo.png",
+      },
     },
     "description": "Articles about anything you think about",
     "image": "./opengraph-image.png",
@@ -48,17 +50,19 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
       <Head>
-      <script type="application/ld+json">
-        {JSON.stringify(jsonLdLayout)}
-      </script>
+        <link rel="icon" href="/favicon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLdLayout)}
+        </script>
       </Head>
+      <body className={inter.className}>
         <Navbar />
         <h5 className="layouth5">Free articles for everyone</h5>
         {children}
         <Footer />
-        </body>
+      </body>
     </html>
   );
 }
