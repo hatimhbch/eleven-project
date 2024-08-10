@@ -6,15 +6,21 @@ import Footer from "./components/Footer/footer";
 import Head from "next/head";
 
 export const metadata: Metadata = {
-  title: "elevenai",
+  title: {
+    default: "elevenai",
+    template: "%s"
+  },
   description: "Articles about anything you think about",
   openGraph: {
-    title: "elevenai",
+    title: {
+      default: "elevenai",
+      template: "%s"
+    },
     description: "Articles about anything you think about",
     images: "/favicon.ico",
   },
   icons: {
-    icon: "/favicon.png", // Specify the favicon file
+    icon: "./icon.png", // Specify the favicon file
     shortcut: "/favicon.ico", // Optional, for browsers that use the shortcut icon
   },
 };
