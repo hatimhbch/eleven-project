@@ -1,0 +1,21 @@
+.aboutme{
+    display: block;
+    width: 35%;
+    height: 400px;
+}
+.aboutme h2{
+    font-size: 17px;
+    font-weight: 700;
+    color: #272727;
+    padding: 8px 0;
+}
+.aboutme h4{
+    font-size: 16px;
+    color: #272727;
+    padding:13px 0 7px 0;
+    font-weight: 600;
+}
+.aboutme h5{
+    font-size: 15px;
+    color: #666;
+}

@@ -42,7 +42,7 @@ function Collection() {
   const truncateDescription = (description?: string): string => {
     if (!description) return '';
     if (description.length > 10) {
-      return `${description.slice(0, 45)}...`;
+      return `${description.slice(0, 50)}...`;
     }
     return description;
   };

@@ -1,0 +1,181 @@
+---
+title: Integrating NextJS with Supabase using Prisma
+description: we'll walk through the process of setting up a small project that demonstrates how to connect a NextJS application with Supabase, a powerful open-source Firebase alternative, using the Prisma ORM.
+date: 10 Aug, 2024
+readtime: "13"
+imageurl: https://miro.medium.com/v2/resize:fit:1400/1*MeOXieH1vGyxiQw7A2TwSw.jpeg
+---
+
+In this article, we'll walk through the process of setting up a small project that demonstrates how to connect a NextJS application with Supabase, a powerful open-source Firebase alternative, using the Prisma ORM.
+
+## Prerequisites
+
+Before we begin, make sure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org/en/)   (version 12 or higher)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install)   (or npm if you prefer)
+- [Prisma](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases/connect-your-database-nodejs)
+- [Supabase](https://supabase.com/)   account and project
+
+## Step 1: Set up the NextJS project
+
+1. Create a new NextJS project using the following command:
+
+```cmd
+npx create-next-app supabase-nextjs-prisma
+```
+
+1. Navigate to the project directory:
+
+```cmd
+cd supabase-nextjs-prisma
+```
+
+## Step 2: Install the necessary dependencies
+
+Install the required packages for the project:
+
+```cmd
+yarn add @supabase/supabase-js prisma @prisma/client
+```
+
+## Step 3: Set up Prisma
+
+1. Initialize Prisma in your project:
+
+```cmd
+yarn prisma init
+```
+
+This will create a `prisma` directory with a `schema.prisma` file.
+
+1. In the `schema.prisma`   file, define your data model. For example, let's create a simple `Post`   model:
+
+```cmd
+model Post {
+  id        String   @id @default(uuid())
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+```
+
+1. Generate the Prisma client:
+
+```cmd
+yarn prisma generate
+```
+
+This will create the Prisma client in your project, which you can use to interact with your database.
+
+## Step 4: Connect Supabase to your NextJS project
+
+1. Create a new file called `supabase.js`   in the `lib`   directory and add the following code:
+
+```tsx
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = 'YOUR_SUPABASE_URL'
+const supabaseKey = 'YOUR_SUPABASE_KEY'
+
+export const supabase = createClient(supabaseUrl, supabaseKey)
+```
+
+Replace `'YOUR_SUPABASE_URL'` and `'YOUR_SUPABASE_KEY'` with your actual Supabase URL and API key.
+
+1. Now, you can use the `supabase`   client in your NextJS application to interact with your Supabase database.
+
+## Step 5: Integrate Prisma with Supabase
+
+1. In the `prisma/schema.prisma`   file, update the `datasource`   block to use the Supabase database:
+
+```tsx
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+```
+
+1. Create a new file called `prisma.ts`   in the `lib`   directory and add the following code:
+
+```tsx
+import { PrismaClient } from '@prisma/client'
+import { supabase } from './supabase'
+
+const prisma = new PrismaClient({
+  datasources: {
+    db: {
+      url: supabase.config.db.url,
+    },
+  },
+})
+
+export default prisma
+```
+
+This code creates a Prisma client instance that uses the Supabase database connection.
+
+## Step 6: Implement CRUD operations
+
+Now, you can use the Prisma client in your NextJS pages to perform CRUD (Create, Read, Update, Delete) operations on your Supabase database. Here's an example of how to fetch and display a list of posts:
+
+```tsx
+// pages/index.tsx
+import { GetServerSideProps } from 'next'
+import prisma from '../lib/prisma'
+
+interface Post {
+  id: string
+  title: string
+  content: string
+  createdAt: Date
+  updatedAt: Date
+}
+
+interface IndexPageProps {
+  posts: Post[]
+}
+
+export default function IndexPage({ posts }: IndexPageProps) {
+  return (
+    <div>
+      <h1>Posts</h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>
+            <h2>{post.title}</h2>
+            <p>{post.content}</p>
+            <p>Created at: {post.createdAt.toLocaleString()}</p>
+            <p>Updated at: {post.updatedAt.toLocaleString()}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const posts = await prisma.post.findMany()
+
+  return {
+    props: {
+      posts: posts.map((post) => ({
+        id: post.id,
+        title: post.title,
+        content: post.content,
+        createdAt: post.createdAt.toISOString(),
+        updatedAt: post.updatedAt.toISOString(),
+      })),
+    },
+  }
+}
+```
+
+This example demonstrates how to use the Prisma client to fetch all the posts from the Supabase database and display them on the home page.
+
+## Conclusion
+
+In this article, you've learned how to integrate a NextJS application with Supabase using Prisma. By following these steps, you can now build full-stack applications that leverage the power of Supabase's database and the convenience of Prisma's ORM. This setup allows you to easily interact with your Supabase database from your NextJS application, enabling you to create, read, update, and delete data seamlessly.
+
+Remember to explore the Prisma and Supabase documentation for more advanced use cases and features, such as authentication, real-time updates, and more. Happy coding!

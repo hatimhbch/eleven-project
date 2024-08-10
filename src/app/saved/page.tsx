@@ -20,9 +20,9 @@ const SavedPage: FC = () => {
 
   return (
     <div>
-      <h1>Saved Posts</h1>
+      <h1 className="savedposts">Saved Posts</h1>
       <div className='shp-collection'>
-        {savedPosts.map((post: { slugAsParams: any; title: string; description?: string; date: string }, index: Key) => (
+        {savedPosts.map((post: { slugAsParams: any; title: string; description?: string; date: string,imageurl: string }, index: Key) => (
           <Link href={`/${post.slugAsParams}`} key={index} className='hp-listofcollection'>
             <div className="hp-leftofarticle">
               <div className="hp-profile">
@@ -33,11 +33,15 @@ const SavedPage: FC = () => {
               <p className="hp-desc">{truncateDescription(post.description)}</p>
               <p className="hp-dateandreadtime">{post.date}</p>
             </div>
-            <h6 className="hp-cover"></h6>
+            <h6 className="hp-cover" style={{
+        background: `url(${post.imageurl})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
+        }}></h6>
           </Link>
         ))}
       </div>
-      <a href="/">Go to Home</a>
+      <Link className="gotohomee" href="/">Go to Home</Link>
     </div>
   );
 };

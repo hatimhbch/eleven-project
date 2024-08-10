@@ -55,6 +55,7 @@ export default function RootLayout({
       </script>
       </Head>
         <Navbar />
+        <h5 className="layouth5">Free articles for everyone</h5>
         {children}
         <Footer />
         </body>
