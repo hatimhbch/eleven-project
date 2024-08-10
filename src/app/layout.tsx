@@ -18,9 +18,10 @@ export const metadata: Metadata = {
     },
     description: "Articles about anything you think about",
     images: "/favicon.ico",
+    
   },
   icons: {
-    icon: "./icon.png", // Specify the favicon file
+    icon: "/favicon.ico", // Specify the favicon file
     shortcut: "/favicon.ico", // Optional, for browsers that use the shortcut icon
   },
 };
@@ -47,9 +48,10 @@ export default function RootLayout({
       "name": "elevenai",
       "logo": {
         "@type": "ImageObject",
-        "url": "./logo.png",
+        "url": "/favicon.png",
       },
     },
+    "icons": "/favicon.ico",
     "description": "Articles about anything you think about",
     "image": "./opengraph-image.png",
   };
@@ -59,8 +61,8 @@ export default function RootLayout({
       <Head>
         <link rel="icon" href="/favicon.png" />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <script type="application/ld+json">
           {JSON.stringify(jsonLdLayout)}
         </script>
