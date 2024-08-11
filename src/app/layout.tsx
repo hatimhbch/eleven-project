@@ -84,14 +84,14 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="/favicon-192x192.png" />  {/* Preferred high-resolution PNG */}
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> {/* For Apple devices */}
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLdLayout)}
-        </script>
-      </Head>
       <body className={inter.className}>
+        <Head>
+          <link rel="icon" href="/favicon-192x192.png" />  {/* Preferred high-resolution PNG */}
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> {/* For Apple devices */}
+          <script type="application/ld+json">
+          {JSON.stringify(jsonLdLayout)}
+          </script>
+        </Head>
         <Navbar />
         <h5 className="layouth5">Free articles for everyone</h5>
         {children}
