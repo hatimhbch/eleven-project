@@ -1,9 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
-module.exports = {
-    siteUrl: process.env.SITE_URL || 'https://elevenai.co',
-    generateRobotsTxt: true,
-    // optional
-    robotsTxtOptions: {
-      policies: [{ userAgent: '*', allow: '/' }],
-    },
-  };
+export const siteUrl = process.env.SITE_URL || 'https://elevenai.co';
+export const generateRobotsTxt = true;
+export const robotsTxtOptions = {
+  policies: [{ userAgent: '*', allow: '/' }],
+};
