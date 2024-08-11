@@ -8,21 +8,47 @@ import Head from "next/head";
 export const metadata: Metadata = {
   title: {
     default: "elevenai",
-    template: "%s"
+    template: `%s `,
   },
   description: "Articles about anything you think about",
-  openGraph: {
-    title: {
-      default: "elevenai",
-      template: "%s"
+  keywords: [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "ai",
+    "Python",
+    "java",
+    "javascript",
+    "typescript",
+    "prisma"
+  ],
+  authors: [
+    {
+      name: "hatim",
+      url: "https://elevenai.co",
     },
+  ],
+  creator: "hatim",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://elevenai.co",
+    title: "elevenai",
     description: "Articles about anything you think about",
-    images: "/favicon.ico",
-    
+    siteName: "elevenai",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "elevenai",
+    description: "Articles about anything you think about",
+    images: "/opengraph-image.png",
   },
   icons: {
-    icon: "/favicon.ico", // Specify the favicon file
-    shortcut: "/favicon.ico", // Optional, for browsers that use the shortcut icon
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
   },
 };
 

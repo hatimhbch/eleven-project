@@ -46,12 +46,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: doc.title,
-    description: doc.description || "Default description",
+    description: doc.description,
     openGraph: {
       title: doc.title,
       description: doc.description,
-      images: [{ url: doc.imageurl }]
-    }
+      type: "article",
+      url: `https://elevenai.co/${doc.slug}`,
+      images: [
+        {
+          url: doc.imageurl,
+          width: 1200,
+          height: 630,
+          alt: doc.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: doc.title,
+      description: doc.description,
+      images: doc.imageurl,
+    },
   };
 }
 
