@@ -126,3 +126,11 @@ strong{
     width: 27px;
     margin-right: 5px;
 }
+
+@media only screen and (max-width: 600px) {
+    .articlepage{
+        display: block;
+        width: 85%;
+        margin: 30px auto 0 auto;
+    }
+}

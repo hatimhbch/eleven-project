@@ -104,3 +104,21 @@
     background-size: cover !important;
     border: 1px solid #eee;
 }
+@media only screen and (max-width: 600px) {
+    .collection{
+        position: relative;
+        width: 95%;
+    }
+    .hp-collection .hp-listofcollection .hp-leftofarticle h1{
+        font-size: 22px;
+        margin-top: 12px;
+        line-height: 25px;
+    }
+    .hp-leftofarticle .hp-desc{
+        font-size: 15px;
+    }
+    .hp-collection .hp-listofcollection .hp-cover{
+        width: 200px;
+        height: 70px;
+    }
+}
