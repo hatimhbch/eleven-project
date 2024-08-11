@@ -86,8 +86,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Head>
-          <link rel="icon" href="/favicon-192x192.png" />  {/* Preferred high-resolution PNG */}
-          <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> {/* For Apple devices */}
+          <link rel="icon" href="https://elevenai.co/favicon-192x192.png" sizes="192x192" />  {/* Preferred high-resolution PNG */}
+          <link rel="apple-touch-icon" href="https://elevenai.co/favicon-32x32.png" sizes="32x32" /> {/* For Apple devices */}
           <script type="application/ld+json">
           {JSON.stringify(jsonLdLayout)}
           </script>
