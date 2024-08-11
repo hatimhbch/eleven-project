@@ -172,10 +172,10 @@ font-family: 'Rubik', sans-serif;
         display: none;
     }
     .searchsave .iconsbar{
-        margin-left: 130px;
+        margin-left: 100px;
     }
     .nav .logo{
-        margin-left: -40px;
+        margin-left: -20px;
     }
     .nav{
         justify-content: space-between;
