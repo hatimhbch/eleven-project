@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar/navbar";
 import Footer from "./components/Footer/footer";
 import Head from "next/head";
+import GoogleAnalytics from '@/app/GoogleAnalytics';
 
 export const metadata: Metadata = {
   title: {
@@ -84,14 +85,15 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Head>
+      <GoogleAnalytics />
+      <Head>
           <link rel="icon" href="https://elevenai.co/favicon-192x192.png" sizes="192x192" />  {/* Preferred high-resolution PNG */}
           <link rel="apple-touch-icon" href="https://elevenai.co/favicon-32x32.png" sizes="32x32" /> {/* For Apple devices */}
           <script type="application/ld+json">
           {JSON.stringify(jsonLdLayout)}
           </script>
-        </Head>
+      </Head>
+      <body className={inter.className}>
         <Navbar />
         <h5 className="layouth5">Free articles for everyone</h5>
         {children}
