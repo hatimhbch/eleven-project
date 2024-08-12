@@ -1,4 +1,5 @@
-"use client";
+"use client"
+// collection.tsx
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -31,7 +32,7 @@ function Collection() {
     description: doc.description,
     date: doc.date,
     imageurl: doc.imageurl,
-  })).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); // فرز المنشورات حسب التاريخ بترتيب تنازلي
+  })).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const indexOfLastPost = currentPage * POSTS_PER_PAGE;
   const indexOfFirstPost = indexOfLastPost - POSTS_PER_PAGE;
@@ -41,7 +42,7 @@ function Collection() {
 
   const truncateDescription = (description?: string): string => {
     if (!description) return '';
-    if (description.length > 10) {
+    if (description.length > 50) {
       return `${description.slice(0, 50)}...`;
     }
     return description;
@@ -52,18 +53,18 @@ function Collection() {
       <Link href={post.href} className="hp-listofcollection" key={index}>
         <div className="hp-leftofarticle">
           <div className="hp-profile">
-            <Image src={profile} alt="Profile" />
+            <Image src={profile} alt="Profile" loading="lazy" />
             <p>Hatim Habchaoui</p>
           </div>
           <h1>{post.title}</h1>
           <p className="hp-desc">{truncateDescription(post.description)}</p>
           <p className="hp-dateandreadtime">{post.date}</p>
         </div>
-        <h6 className="hp-cover" style={{
-        background: `url(${post.imageurl})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover'
-        }}></h6>
+        <div className="hp-cover" style={{
+          background: `url(${post.imageurl})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover'
+        }}></div>
       </Link>
     ));
 
