@@ -45,12 +45,38 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "elevenai",
     description: "Articles about anything you think about",
+    creator: "@elevenaico",
     images: "/opengraph-image.png",
   },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-  },
+  icons: [
+    {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      url: '/apple-touch-icon-180x180.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      url: '/favicon-32x32.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      url: '/favicon-16x16.png',
+    },
+    {
+      rel: 'mask-icon',
+      color: '#f8893a',
+      url: '/maskable-icon.svg',
+    },
+    {
+      rel: 'shortcut icon',
+      url: '/favicon-16x16.png',
+    },
+  ],
+  manifest: 'https://elevenai.co/manifest.json',
 };
 
 const inter = Inter({ subsets: ["latin"] });
@@ -64,23 +90,23 @@ export default function RootLayout({
   const jsonLdLayout = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "elevenai",
-    "datePublished": "26-07-2024",
-    "author": {
+    headline: "elevenai",
+    datePublished: "26-07-2024",
+    author: {
       "@type": "Person",
-      "name": "Hatim",
+      name: "Hatim",
     },
-    "publisher": {
+    publisher: {
       "@type": "Organisation",
-      "name": "elevenai",
-      "logo": {
+      name: "elevenai",
+      logo: {
         "@type": "ImageObject",
-        "url": "/favicon.png",
+        url: "/favicon.png",
       },
     },
-    "icons": "/favicon.ico",
-    "description": "Articles about anything you think about",
-    "image": "./opengraph-image.png",
+    icons: "/favicon.ico",
+    description: "Articles about anything you think about",
+    image: "./opengraph-image.png",
   };
 
   return (

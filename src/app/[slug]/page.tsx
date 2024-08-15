@@ -62,11 +62,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           alt: doc.title,
         },
       ],
+      siteName: 'elevenai'
     },
     twitter: {
       card: "summary_large_image",
       title: doc.title,
       description: doc.description,
+      creator: '@elevenaico',
+      site: "@elevenaico",
       images: doc.imageurl,
     },
   };
@@ -78,25 +81,28 @@ const Page = async ({ params }: PageProps) => {
     return <p>Not Found</p>;
   }
 
+console.log(`https://elevenai.co/${doc.slug}`);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": doc.title,
-    "datePublished": doc.date,
-    "author": {
+    headline: doc.title,
+    datePublished: doc.date,
+    uploadDate: new Date().toISOString(),
+    author: {
       "@type": "Person",
-      "name": "Hatim",
+      name: "Hatim",
     },
-    "publisher": {
+    publisher: {
       "@type": "Organisation",
-      "name": "elevenai",
-      "logo": {
+      name: "elevenai",
+      logo: {
         "@type": "ImageObject",
-        "url": "../../logo.png"
+        url: "../../logo.png"
       }
     },
-    "description": doc.description,
-    "image": doc.imageurl,
+    description: doc.description,
+    image: doc.imageurl,
   };
 
   return (
