@@ -4,6 +4,8 @@ import PageClient from "./PageClient"; // Import the client component
 import { Metadata } from "next";
 import Script from "next/script";
 import Head from "next/head";
+import Collection from "../components/collection/collection";
+import CollectionSlug from "../components/collectionslug/collectionslug";
 
 interface Doc {
   body: { code: string };
@@ -106,6 +108,8 @@ const Page = async ({ params }: PageProps) => {
     />
 </Head>
       <PageClient doc={doc} />
+      <h2 className="lastestarticles">Latest Articles</h2>
+      <CollectionSlug />
     </>
   );
 };
