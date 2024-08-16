@@ -27,9 +27,6 @@ export const metadata: Metadata = {
     },
   ],
   creator: "hatim",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-  ],
   openGraph: {
     type: "website",
     locale: "en_US",
