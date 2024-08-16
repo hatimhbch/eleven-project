@@ -1,0 +1,180 @@
+---
+title: How to create Java ArrayList from Scratch
+description: Ever wondered what magic happens behind the scenes when you use an ArrayList in Java?  You know, that super handy list that can grow and shrink as you need it? Well, get ready to roll up your sleeves and dive deep because we're going to build our own simplified version of an ArrayList from scratch!
+date: 16 Aug, 2024
+readtime: "16"
+imageurl: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQktBkzWwd96W3ittXsEFxWkY4M8axtu1rlHA&s
+---
+
+Hey there, future Java gurus! Ever wondered what magic happens behind the scenes when you use an `ArrayList` in Java?  You know, that super handy list that can grow and shrink as you need it? Well, get ready to roll up your sleeves and dive deep because we're going to build our own simplified version of an `ArrayList` from scratch!
+
+This tutorial is perfect for you to level up your Java skills. By building your own `ArrayList`, you'll not only impress your friends (and maybe even future employers!) but also gain a rock-solid understanding of fundamental data structures and object-oriented programming.  Think of it like peeking under the hood of a powerful engine – you'll see how all the parts work together to create something amazing.
+
+**Why Bother Building Our Own?**
+
+You might be wondering, "Why reinvent the wheel when Java already has a perfectly good `ArrayList` class?"  Great question! Building your own helps you grasp the core concepts behind dynamic arrays. It's like learning to bake a cake from scratch instead of just using a mix – you understand the ingredients and the process, giving you more control and flexibility.
+
+Plus, it's a fantastic way to practice essential Java skills like working with arrays, generics, and classes.  Consider this your coding boot camp for understanding one of the most commonly used data structures in Java!
+
+**Let's Get Started! A Quick Refresher on the Basics**
+
+Before we jump into the code, let's make sure we're all on the same page with a few key concepts:
+
+* **Arrays: The Building Blocks:**  Remember that arrays in Java are like containers with a fixed number of slots.  You access elements using their index (starting from 0). Think of them like a row of numbered lockers – each locker holds a specific item.
+
+* **Generics: The Type Whisperer:**  Generics, represented by those angle brackets `<T>`, allow us to create flexible classes and methods that can work with various data types. It's like having a universal adapter for your code!
+
+* **Classes and Objects: The Blueprint and the Building:**  Classes are like blueprints for creating objects.  They define the structure and behavior of objects. Imagine a car blueprint – it defines the car's features and how it operates. Objects are then the actual cars built from that blueprint.
+
+**Building Our `MyArrayList` Class: Step-by-Step Guide**
+
+Alright, let's get our hands dirty and start building our own `MyArrayList` class!  Don't worry, we'll break it down into manageable steps.
+
+**Step 1: Laying the Foundation – Class Declaration and Instance Variables**
+
+First, we need to declare our class and define the variables that will hold our data.
+
+```java
+public class MyArrayList<T> {
+    private T[] data; // Our array to store elements
+    private int size; // Tracks the number of elements in the array
+}
+```
+
+* **`public class MyArrayList<T>`:** This line declares our class named `MyArrayList` and uses the generic type `T`, allowing us to store any type of object in our list.
+
+* **`private T[] data;`:** This declares a private array named `data` to hold our elements. The type `T` ensures the array can hold whatever type of object we specify when creating an instance of `MyArrayList`.
+
+* **`private int size;`:** This declares a private integer variable named `size` to keep track of how many elements are currently stored in our array.
+
+**Step 2: The Constructor – Setting the Stage**
+
+Next, we need a constructor to initialize our `MyArrayList` when it's created.
+
+```java
+public MyArrayList() {
+    data = (T[]) new Object[10]; // Initial capacity of 10
+    size = 0; // Initially, there are no elements
+}
+```
+
+* **`public MyArrayList()`:** This is the constructor for our class. It's called automatically when a new `MyArrayList` object is created.
+
+* **`data = (T[]) new Object[10];`:** This line initializes our `data` array with an initial capacity of 10.  We're using `Object` here because we don't know the specific type `T` yet. The `(T[])` is a cast to convert the `Object[]` to `T[]`.
+
+* **`size = 0;`:**  We set the initial `size` to 0 because our array is empty when first created.
+
+**Step 3:  Adding Elements – The `add(T element)` Method**
+
+Now for the exciting part – adding elements to our `MyArrayList`!
+
+```java
+public void add(T element) {
+    if (size == data.length) {
+        resizeArray(); // Double the capacity if the array is full
+    }
+    data[size] = element; // Add the element at the next available index
+    size++; // Increment the size counter
+}
+```
+
+* **`public void add(T element)`:** This method allows us to add an element of type `T` to our `MyArrayList`.
+
+* **`if (size == data.length) { resizeArray(); }`:**  This checks if our array is full. If it is, we call the `resizeArray()` method (which we'll define next) to double the capacity.
+
+* **`data[size] = element;`:** This adds the new element at the next available index, which is indicated by the current value of `size`.
+
+* **`size++;`:**  We increment `size` to reflect the addition of the new element.
+
+**The `resizeArray()` Method: Making Room for More**
+
+```java
+private void resizeArray() {
+    T[] newData = (T[]) new Object[data.length * 2]; // Create a new array with double the capacity
+    for (int i = 0; i < data.length; i++) {
+        newData[i] = data[i]; // Copy elements to the new array
+    }
+    data = newData; // Update the data array to the new, larger array
+}
+```
+
+* **`private void resizeArray()`:** This helper method doubles the capacity of our `data` array when it's full.
+
+* **`T[] newData = (T[]) new Object[data.length * 2];`:**  Creates a new array with twice the size of the current `data` array.
+
+* **`for (int i = 0; i < data.length; i++) { newData[i] = data[i]; }`:** Copies all elements from the old array to the new, larger array.
+
+* **`data = newData;`:** Updates the `data` array reference to point to the new, larger array.
+
+**Step 4: Retrieving Elements – The `get(int index)` Method**
+
+Let's implement a method to retrieve elements from our `MyArrayList` using their index.
+
+```java
+public T get(int index) {
+    if (index < 0 || index >= size) {
+        throw new IndexOutOfBoundsException("Index out of bounds!"); // Handle invalid indices
+    }
+    return data[index]; // Return the element at the specified index
+}
+```
+
+* **`public T get(int index)`:** This method returns the element of type `T` at the specified index.
+
+* **`if (index < 0 || index >= size) { throw new IndexOutOfBoundsException("Index out of bounds!"); }`:**  This checks for invalid indices and throws an exception if the index is out of range.
+
+* **`return data[index];`:** Returns the element at the specified index.
+
+**Step 5: Knowing the Size – The `size()` Method**
+
+Finally, let's add a method to get the number of elements in our `MyArrayList`.
+
+```java
+public int size() {
+    return size; // Return the current size of the array
+}
+```
+
+* **`public int size()`:** This method returns the current number of elements stored in our `MyArrayList`.
+
+* **`return size;`:** Simply returns the value of the `size` variable.
+
+**Putting it All Together:  Testing Our `MyArrayList`**
+
+Let's see our `MyArrayList` in action!
+
+```java
+public static void main(String[] args) {
+    MyArrayList<String> myList = new MyArrayList<>();
+    myList.add("Hello");
+    myList.add("World");
+    myList.add("!");
+
+    System.out.println("Size: " + myList.size()); // Output: Size: 3
+
+    for (int i = 0; i < myList.size(); i++) {
+        System.out.println(myList.get(i)); // Output: Hello, World, !
+    }
+}
+```
+
+In this example, we create a `MyArrayList` to store strings, add three elements, print the size, and then iterate through the list to print each element.
+
+**Level Up Your Skills: Optional Enhancements**
+
+We've built a basic `MyArrayList`, but there's so much more you can do!  Try adding these methods for extra practice:
+
+* **`remove(int index)`:**  Removes the element at the specified index.
+* **`set(int index, T element)`:**  Replaces the element at the specified index with a new element.
+* **`contains(T element)`:**  Checks if the list contains a specific element.
+
+**Congratulations! You've built your own simplified `ArrayList`!**
+
+You've gained valuable insights into how dynamic arrays work and practiced essential Java skills.  Remember, this is just the beginning! Keep exploring, keep learning, and keep building amazing things with Java!
+
+**Further Exploration:**
+
+* **Java Collections Framework:** Dive deeper into the world of Java collections and discover other powerful data structures like `LinkedList`, `HashSet`, and `HashMap`.
+* **Big O Notation:** Learn about Big O notation to understand the efficiency of different algorithms and data structures.
+
+Now go forth and conquer the world of Java!  You've got this!
