@@ -87,7 +87,7 @@ const PageClient: FC<PageClientProps> = ({ doc }) => {
             <Image src={profile} alt="Profile" />
             <div className="aua-date-time">
               <p>Hatim Habchaoui</p>
-              <h6><span>Reading time: {doc.readtime} min, </span>{doc.date}</h6>
+              <h6><span>{doc.readtime} min read, </span>{doc.date}</h6>
             </div>
           </div>
           <div className="discopysave">
