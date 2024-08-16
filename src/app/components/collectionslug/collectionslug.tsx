@@ -55,7 +55,7 @@ function CollectionSlug() {
           backgroundPosition: 'center',
           backgroundSize: 'cover'
           }}></div>
-          <h1>{post.title}</h1>
+          <h4>{post.title}</h4>
           <p className="cslug-desc">{truncateDescription(post.description)}</p>
           <p className="cslug-dateandreadtime">{post.date}</p>
         </div>
