@@ -133,7 +133,7 @@ const PageClient: FC<PageClientProps> = ({ doc }) => {
           style={{paddingBottom: '25px'}}
           objectFit="cover"
           layout="fill"
-          alt="programming" />
+          alt={doc.title} />
         </div>  
           <Mdx code={doc.body.code} />
         </div>
