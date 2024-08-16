@@ -7,11 +7,8 @@ import Head from "next/head";
 import GoogleAnalytics from '@/app/GoogleAnalytics';
 
 export const metadata: Metadata = {
-  title: {
-    default: "elevenai",
-    template: `%s `,
-  },
-  description: "Articles about anything you think about",
+  title: "elevenai",
+  description: "Articles about anything you think about. ai , programming, image generator models and any ai models",
   keywords: [
     "Next.js",
     "React",
