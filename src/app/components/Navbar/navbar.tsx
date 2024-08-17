@@ -85,7 +85,7 @@ function Navbar() {
         </div>
         <div className="iconsbar">
           <Link href="/saved" className="icosign">
-            <Image src={save} alt=''/><p>Saved</p>
+            <Image src={save} alt='save'/><p>Saved</p>
           </Link>
         </div>
       </div>
