@@ -36,7 +36,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "build/types/**/*.ts"
-  ],
+, "lib/indexnow.js"  ],
   "exclude": [
     "node_modules"
   ]

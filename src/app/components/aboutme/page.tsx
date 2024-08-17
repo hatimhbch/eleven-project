@@ -1,6 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
-import profile from '@/app/components/images/profile.svg';
 import './aboutme.css'
 
 function Aboutme() {
