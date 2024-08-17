@@ -56,7 +56,7 @@ function Collection() {
             <Image src={profile} alt="Profile" loading="lazy" />
             <p>Hatim Habchaoui</p>
           </div>
-          <h1>{post.title}</h1>
+          <h2>{post.title}</h2>
           <p className="hp-desc">{truncateDescription(post.description)}</p>
           <p className="hp-dateandreadtime">{post.date}</p>
         </div>
