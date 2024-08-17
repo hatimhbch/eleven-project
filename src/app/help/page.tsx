@@ -2,7 +2,7 @@ import React from 'react'
 
 function Help() {
   return (
-    <div className='text-center items-center to-black'>Help</div>
+    <h1 className='text-center items-center to-black'>Help</h1>
   )
 }
 
