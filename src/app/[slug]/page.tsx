@@ -52,8 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: doc.title,
       description: doc.description,
-      type: "article",
-      url: `https://elevenai.co/${doc.slug}`,
+      url: `https://elevenai.co/${doc.slug.split(' ').slice(0,6).join(' ')}`,
       images: [
         {
           url: doc.imageurl,
