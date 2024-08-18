@@ -47,13 +47,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const slugWithoutFirst5Words = doc.slug.slice(5);
+  const discWithoutFirst100Words = doc.description?.slice(0,99);
 
   return {
     title: doc.title,
     description: doc.description,
     openGraph: {
       title: doc.title,
-      description: doc.description,
+      description: discWithoutFirst100Words,
       url: `https://elevenai.co${slugWithoutFirst5Words}`,
       images: [
         {
