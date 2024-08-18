@@ -46,13 +46,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const slugWithoutFirst5Words = doc.slug.slice(5);
+
   return {
     title: doc.title,
     description: doc.description,
     openGraph: {
       title: doc.title,
       description: doc.description,
-      url: `https://elevenai.co/${doc.slug.split(' ').slice(0,6).join(' ')}`,
+      url: `https://elevenai.co${slugWithoutFirst5Words}`,
       images: [
         {
           url: doc.imageurl,
