@@ -115,7 +115,7 @@ export default function RootLayout({
       </Head>
       <head>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6737031283367585"
-      crossorigin="anonymous"></script>
+      crossOrigin="anonymous"></script>
       </head>
       <body className={inter.className}>
         <Navbar />
