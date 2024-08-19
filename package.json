@@ -10,7 +10,9 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@types/react-highlight.js": "^1.0.5",
     "axios": "^1.7.4",
+    "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "contentlayer": "^0.3.4",
     "highlight.js": "^11.10.0",
@@ -19,6 +21,7 @@
     "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-highlight.js": "^1.0.7",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-pretty-code": "^0.13.2",
     "rehype-slug": "^6.0.0",

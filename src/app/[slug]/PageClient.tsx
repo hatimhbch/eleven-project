@@ -127,7 +127,7 @@ const PageClient: FC<PageClientProps> = ({ doc }) => {
         }}>
           <Image 
           src={doc.imageurl}
-          style={{padding: '35px', background: '#eaffee'}}
+          style={{padding: '35px', background: '#eaffee', marginBottom: '15px'}}
           objectFit="cover"
           layout="fill"
           alt={doc.title} />

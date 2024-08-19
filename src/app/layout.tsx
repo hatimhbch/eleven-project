@@ -113,6 +113,10 @@ export default function RootLayout({
           {JSON.stringify(jsonLdLayout)}
           </script>
       </Head>
+      <head>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6737031283367585"
+      crossorigin="anonymous"></script>
+      </head>
       <body className={inter.className}>
         <Navbar />
         <h5 className="layouth5">Free articles for everyone</h5>
