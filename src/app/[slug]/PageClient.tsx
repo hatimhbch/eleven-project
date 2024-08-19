@@ -84,11 +84,8 @@ const PageClient: FC<PageClientProps> = ({ doc }) => {
         <h1 className="h1pageclient">{doc.title}</h1>
         <div className="listoficonsreact">
           <div className="artinfo-user-art">
-            <Image src={profile} alt="Profile" />
-            <div className="aua-date-time">
-              <p>Hatim Habchaoui</p>
-              <h6><span>{doc.readtime} min read, </span>{doc.date}</h6>
-            </div>
+              <p>Hatim Habchaoui <span style={{fontSize: '25px'}}>.</span></p>
+              <p> {doc.date} <span style={{fontSize: '25px'}}>.</span> <span>{doc.readtime} min read</span></p>
           </div>
           <div className="discopysave">
             <div className="copieddis">
@@ -107,11 +104,11 @@ const PageClient: FC<PageClientProps> = ({ doc }) => {
               style={{ backgroundColor: 'transparent' }} // Transparent button background
             >
             <svg 
-               width="20.6px" 
-               height="20.6px" 
+               width="18px" 
+               height="18px" 
                viewBox="0 0 24 24" 
                fill={isSaved ? '#222' : 'none'} 
-               stroke={isSaved ? '#222' : '#888'} 
+               stroke={isSaved ? '#222' : '#333'} 
                strokeWidth="1" 
                xmlns="http://www.w3.org/2000/svg"
              >
@@ -122,15 +119,15 @@ const PageClient: FC<PageClientProps> = ({ doc }) => {
         </div>
         <div className="mdx-content">
         <div style={{ 
-        width: '98%',
-        height: '440px', 
+        width: '100%',
+        height: '400px', 
         overflow: 'hidden', 
         position: 'relative',
         margin: '40px auto 0 auto',
         }}>
           <Image 
           src={doc.imageurl}
-          style={{paddingBottom: '25px'}}
+          style={{padding: '35px', background: '#eaffee'}}
           objectFit="cover"
           layout="fill"
           alt={doc.title} />
